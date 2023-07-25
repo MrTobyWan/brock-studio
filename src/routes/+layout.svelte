@@ -7,17 +7,24 @@
 	import '../app.postcss';
 
 	import { LightSwitch } from '@skeletonlabs/skeleton';
+
+	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
 </script>
 
-<div class="static">
-	<nav class="absolute top-2 left-2">
-		<ul>
-			<li>Home</li>
-		</ul>
-	</nav>
-	<div class="absolute top-2 right-2">
-		<LightSwitch />
-	</div>
-</div>
+<AppShell>
+	<svelte:fragment slot="header">
+		<AppBar>
+			<svelte:fragment slot="lead">
+				<div class="space-x-8">
+					<a href="/" class="text-xl">Home</a>
+					<a href="/about" class="text-xl">About me</a>
+				</div>
+			</svelte:fragment>
+			<svelte:fragment slot="trail">
+				<LightSwitch />
+			</svelte:fragment>
+		</AppBar>
+	</svelte:fragment>
+</AppShell>
 
 <slot />
