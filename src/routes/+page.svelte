@@ -1,2 +1,12 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import { theme } from '$lib/stores';
+
+	function handleSwitch(colorScheme: string) {
+		$theme = colorScheme;
+	}
+</script>
+
+<h1>BROCK STUDIO</h1>
+
+<button on:click={() => handleSwitch('dark')}>Dark</button>
+<button on:click={() => handleSwitch('light')}>Light</button>
